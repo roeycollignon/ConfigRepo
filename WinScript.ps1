@@ -1,1 +1,1 @@
-choco install nginx-service -y
+choco install nginx-service -y --force
