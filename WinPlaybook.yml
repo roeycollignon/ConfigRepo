@@ -9,9 +9,9 @@
   - name: Get IP
     raw: ipconfig
     register: x
-    ignore_errors: yes
-  - meta: clear_host_errors
-  - name: Wait for stable state
-    local_action: wait_for host={{ inventory_hostname }} port=5985 state=drained delay=0 timeout=0
+    until: x.rc == 0
+    retries: 10
+    delay: 5
+
   - name: Print Output
     debug: var=x
