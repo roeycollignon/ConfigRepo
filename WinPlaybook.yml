@@ -7,7 +7,9 @@
   - name: Wait for the vms to load
     local_action: wait_for host={{ inventory_hostname }} port=5985 state=drained delay=0 timeout=1200  
   - name: Wait 2 minutes
-    pause: seconds=120
+    pause: seconds=2
+  - name: Wait for the vms to load 2
+    local_action: wait_for host={{ inventory_hostname }} port=5985 state=drained delay=0 timeout=1200  
   - name: Get IP
     raw: ipconfig
     register: x
