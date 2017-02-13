@@ -6,10 +6,11 @@
   tasks:
   - name: Wait for the vms to load
     local_action: wait_for host={{ inventory_hostname }} port=5985 state=drained delay=0 timeout=1200  
-  - name: Wait for stable state
-    local_action: wait_for host={{ inventory_hostname }} port=5985 state=drained delay=10 timeout=300
   - name: Get IP
     raw: ipconfig
     register: x
+    ignore_errors: yes
+  - name: Wait for stable state
+    local_action: wait_for host={{ inventory_hostname }} port=5985 state=drained delay=0 timeout=0
   - name: Print Output
     debug: var=x
