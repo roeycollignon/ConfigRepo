@@ -1,1 +1,1 @@
-ipconfig
+ipconfigw
