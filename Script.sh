@@ -1,1 +1,1 @@
-echo $msg
+echo 20Apps
