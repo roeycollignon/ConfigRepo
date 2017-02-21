@@ -1,1 +1,1 @@
-echo $env:msg
+echogf $env:msg
