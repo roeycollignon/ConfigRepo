@@ -1,1 +1,1 @@
-visudo
+/usr/sbin/visudo
