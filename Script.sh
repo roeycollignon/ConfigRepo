@@ -1,1 +1,1 @@
-echo 20Apps
+echo The password is: \"$cs_machine_pass\"
